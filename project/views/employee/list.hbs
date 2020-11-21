@@ -1,0 +1,40 @@
+<h3><a class="btn btn-secondary" href="/employee"><i class="fa fa-plus"></i> Create New</a> Employee List</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Estudiante</th>
+            <th>FECHA</th>
+            <th>No. Programa</th>
+            <th>Lenguaje</th>
+            <th>Número</th>
+            <th>Tipo</th>
+            <th>Errores ingresados</th>
+            <th>Errores eliminados</th>
+            <th>Tiempo reparación</th>
+            <th>Errores en reparación</th>
+            <th>Descripción</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        <tr>
+            <td>{{this.Estudiante}}</td>
+            <td>{{this.Fecha}}</td>
+            <td>{{this.No_programa}}</td>
+            <td>{{this.Lenguaje}}</td>
+            <td>{{this.Numero}}</td>
+            <td>{{this.Tipo}}</td>
+            <td>{{this.Errores_ingresados}}</td>
+            <td>{{this.Errores_eliminados}}</td>
+            <td>{{this.Tiempo_reparacion}}</td>
+            <td>{{this.Errores_reparacion}}</td>
+            <td>{{this.Descripcion}}</td>
+            <td>
+                <a href="/employee/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/employee/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
